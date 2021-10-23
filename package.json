@@ -1,0 +1,18 @@
+{
+  "name": "slides",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazrean/slides.git"
+  },
+  "author": "mazrean",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazrean/slides/issues"
+  },
+  "homepage": "https://github.com/mazrean/slides#readme",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^1.4.1"
+  }
+}
