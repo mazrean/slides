@@ -2,6 +2,9 @@
   "name": "slides",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "build": "./build.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mazrean/slides.git"
