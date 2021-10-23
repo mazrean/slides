@@ -79,4 +79,4 @@ _class:
 
 ---
 ## 参考文献
-- Rainer Koschke and Raimar Falke, Clone Detection Using Abstract Syntax Suffix Trees, 13th Working Conference on Reverse Engineering (WCRE 2006), 23-27 October 2006
+- [Rainer Koschke and Raimar Falke, Clone Detection Using Abstract Syntax Suffix Trees, 13th Working Conference on Reverse Engineering (WCRE 2006), 23-27 October 2006](https://www.researchgate.net/publication/221200051_Clone_Detection_Using_Abstract_Syntax_Suffix_Trees)
