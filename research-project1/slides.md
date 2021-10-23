@@ -7,7 +7,7 @@ _class:
 - lead
 - invert
 -->
-# Significant Duplication 実装
+# Significant Duplication 検出実装
 ## 若松俊介
 
 ---
@@ -71,3 +71,12 @@ _class:
 -->
 
 # 実演
+
+---
+## リポジトリ
+- コードクローン検出ライブラリ: [mazrean/go-clone-detection](https://github.com/mazrean/go-clone-detection)
+- Significant Duplication検出ツール: [mazrean/sdsniffer](https://github.com/mazrean/sdsniffer)
+
+---
+## 参考文献
+- Rainer Koschke and Raimar Falke, Clone Detection Using Abstract Syntax Suffix Trees, 13th Working Conference on Reverse Engineering (WCRE 2006), 23-27 October 2006
