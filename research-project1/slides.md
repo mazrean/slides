@@ -4,6 +4,7 @@ theme: gaia
 title: Significant Duplication検出実装
 author: mazrean
 url: https://slides-mazrean.vercel.app/research-project1/
+image: https://slides-mazrean.vercel.app/research-project1/ogp.png
 ---
 <!--
 _class:
