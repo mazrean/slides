@@ -17,8 +17,9 @@ jobs:
           node-version: '14'
       - name: Install and Set japanese fonts
         run: |
-          apt install fonts-takao fonts-ipafont fonts-ipaexfont
-          fc-cache -fv
+          sudo apt-get update
+          sudo apt-get install fonts-takao fonts-ipafont fonts-ipaexfont
+          sudo fc-cache -fv
       - run: npm install
       - name: Build
         run: npm run build
