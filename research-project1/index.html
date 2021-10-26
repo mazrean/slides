@@ -24,16 +24,43 @@
 <h2>Size of Exact Clone</h2>
 <p>コードの重複の大きさ。<br />
 重複が十分大きいかの判定で使用。</p>
+<h3>条件</h3>
+<ul>
+<li>重複単体の場合
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>E</mi><mi>C</mi><mo>&gt;</mo><mi>A</mi><mi>V</mi><mi>E</mi><mi>R</mi><mi>A</mi><mi>G</mi><mi>E</mi><mo stretchy="false">(</mo><mi>L</mi><mi>O</mi><mi>C</mi><mi mathvariant="normal">/</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">SEC &gt; AVERAGE(LOC/operation)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">SEC</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.00773em;">ER</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05764em;">GE</span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.07153em;">OC</span><span class="mord">/</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>V</mi><mi>E</mi><mi>R</mi><mi>A</mi><mi>G</mi><mi>E</mi><mo stretchy="false">(</mo><mi>L</mi><mi>O</mi><mi>C</mi><mi mathvariant="normal">/</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">AVERAGE(LOC/operation)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord mathnormal" style="margin-right:0.00773em;">ER</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05764em;">GE</span><span class="mopen">(</span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.07153em;">OC</span><span class="mord">/</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">a</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>は手動設定</li>
+</ul>
+</li>
+<li>複数の重複のまとまりの場合
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>E</mi><mi>C</mi><mo>&gt;</mo><mi>F</mi><mi>E</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">SEC &gt; FEW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">SEC</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">FE</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span></li>
+</ul>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-theme="gaia" style="--theme:gaia;">
 <h2>Line Bias</h2>
 <p>コードの重複間の距離。<br />
 重複が1つの塊かの判定で使用。</p>
+<h3>条件</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>B</mi><mo>≤</mo><mi>F</mi><mi>E</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">LB \leq FEW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">L</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">FE</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span></li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-theme="gaia" style="--theme:gaia;">
 <h2>Size of Duplication Chain</h2>
 <p>重複の塊の大きさ。<br />
 コードの塊が十分大きいかの判定で使用。</p>
+<h3>条件</h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>S</mi><mi>D</mi><mi>C</mi><mo>≥</mo><mn>2</mn><mo>×</mo><mo stretchy="false">(</mo><mi>F</mi><mi>E</mi><mi>W</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">SDC \geq 2\times(FEW+1)+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8193em;vertical-align:-0.13597em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.05764em;">FE</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>
+<ul>
+<li>各重複が<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mi>E</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">FEW</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">FE</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span></span></span></span>より長い</li>
+<li>重複間の隙間分として<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span></span></span></span></li>
+</ul>
+</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-theme="gaia" style="--theme:gaia;">
 <h2>コードの重複検出</h2>
@@ -51,12 +78,14 @@ ASTを元にSuffix Treeを構築する手法を使用。</p>
 <h2>AST→ノードの列</h2>
 <p>ポーランド記法のイメージ。<br />
 各ノードに子ノード数を紐づけるのがポイント。</p>
+<p><img src="ast-to-node.drawio.svg" alt="w:1000" style="width:1000px;" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-theme="gaia" style="--theme:gaia;">
 <h2>Suffix Tree</h2>
 <p>接尾辞(文字列の最後<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>文字)を木構造にしたもの。<br />
 文字数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span>として時間計算量<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span>で構築可能。<br />
 例)banana</p>
+<p><img src="suffix-tree.drawio.svg" alt="h:300" style="height:300px;" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-theme="gaia" style="--theme:gaia;">
 <h2>Suffix Tree→コードの重複</h2>
@@ -66,18 +95,34 @@ ASTを元にSuffix Treeを構築する手法を使用。</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-theme="gaia" style="--theme:gaia;">
 <h2>ノード列の重複→コードの重複</h2>
 <p>子ノードの数を元にノード列を切っていく。</p>
+<p><img src="node-to-clone.drawio.svg" alt="" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="lead invert" data-theme="gaia" class="lead invert" style="--class:lead invert;--theme:gaia;">
 <h1>実演</h1>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-theme="gaia" style="--theme:gaia;">
+<h2>課題</h2>
+<ul>
+<li>コードクローンをペアにする処理
+<ul>
+<li>現在<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>3</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>になっており、非常に遅い</li>
+</ul>
+</li>
+<li>テスト整備
+<ul>
+<li>テストがないのでバグが眠っていそうで怖い</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="gaia" style="--theme:gaia;">
 <h2>リポジトリ</h2>
 <ul>
 <li>コードクローン検出ライブラリ: <a href="https://github.com/mazrean/go-clone-detection">mazrean/go-clone-detection</a></li>
 <li>Significant Duplication検出ツール: <a href="https://github.com/mazrean/sdsniffer">mazrean/sdsniffer</a></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-theme="gaia" style="--theme:gaia;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-theme="gaia" style="--theme:gaia;">
 <h2>参考文献</h2>
 <ul>
 <li><a href="https://www.researchgate.net/publication/221200051_Clone_Detection_Using_Abstract_Syntax_Suffix_Trees">Rainer Koschke and Raimar Falke, Clone Detection Using Abstract Syntax Suffix Trees, 13th Working Conference on Reverse Engineering (WCRE 2006), 23-27 October 2006</a></li>
