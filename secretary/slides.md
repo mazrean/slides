@@ -19,7 +19,7 @@ _class:
 
 いろいろ書くお仕事をする人
 - メンバー集会・役員会のmd・wiki
-- wikiのHistory
+- wikiのhistory
 - OB会への活動報告書作成
 - 学生支援課向けの活動報告作成
 
