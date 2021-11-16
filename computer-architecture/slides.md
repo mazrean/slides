@@ -3,8 +3,8 @@ marp: true
 theme: gaia
 title: One Day Processor
 author: mazrean
-url: https://slides-mazrean.vercel.app/computer-architechture/
-image: https://slides-mazrean.vercel.app/computer-architechture/ogp.png
+url: https://slides-mazrean.vercel.app/computer-architecture/
+image: https://slides-mazrean.vercel.app/computer-architecture/ogp.png
 ---
 <!--
 _class:
