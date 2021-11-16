@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "./build.sh"
+    "build": "./build.sh",
+    "generate": "node generate.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   "homepage": "https://github.com/mazrean/slides#readme",
   "devDependencies": {
     "@marp-team/marp-cli": "^1.4.1"
+  },
+  "dependencies": {
+    "pug": "^3.0.2"
   }
 }
