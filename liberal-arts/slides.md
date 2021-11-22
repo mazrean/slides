@@ -1,10 +1,10 @@
 ---
 marp: true
 theme: gaia
-title: 書記
+title: 情報系技術者の責任
 author: mazrean
-url: https://slides-mazrean.vercel.app/secretary/
-image: https://slides-mazrean.vercel.app/secretary/ogp.png
+url: https://slides-mazrean.vercel.app/liberal-arts/
+image: https://slides-mazrean.vercel.app/liberal-arts/ogp.png
 ---
 <!--
 _class:
