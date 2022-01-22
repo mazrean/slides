@@ -155,9 +155,9 @@ Goの場合、[wire](https://github.com/google/wire)を使うことが多い。
 _class:
 - lead
 -->
-![75%](wire.png)
+![w:500](wire.png)
 
-![bg right:50% 75%](wire-gen.png)
+![bg right:50% w:500](wire-gen.png)
 
 ---
 # Layered Architecture with DI
