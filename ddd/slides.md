@@ -283,7 +283,7 @@ Adapterで変換してPortに繋ぐ
 # Port, Adapter
 
 USB Type-Aのマウス(外部アプリケーション)を
-USB Type-CへAdapterで変換して
+USB Type-C(Port)へ変換アダプタ(Adapter)で変換して
 PC(アプリケーション)に接続するイメージ
 
 ![h:200](port-adapter.jpeg)![h:200](hexagonal-original.png)
@@ -291,8 +291,7 @@ PC(アプリケーション)に接続するイメージ
 ---
 # 演習: Port, Adapterを見てみよう
 時間: 2min
-traP CollectionのサーバーサイドにもPort, Adapterの構造が存在する。
-(Hexagonal Architectureではない)
+traP CollectionのサーバーサイドにもPort, Adapterの構造が存在する
 repository(データ永続化)のPort, Adapterを見てみよう!
 https://github.com/traPtitech/trap-collection-server
 
