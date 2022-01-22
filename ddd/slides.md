@@ -30,6 +30,16 @@ paginate: true
 </style>
 <!--
 _class:
+- lead
+_paginate: false
+-->
+
+# 待機中
+![h:150](blob_pyon.gif)
+
+---
+<!--
+_class:
 - invert
 - lead
 _paginate: false
