@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia
-title: Quantainer
+title: DDDで学ぶ設計講習会
 author: mazrean
 url: https://slides.mazrean.com/ddd/
 image: https://slides.mazrean.com/ddd/ogp.png
@@ -56,7 +56,7 @@ _paginate: false
 (詳細情報は参考文献に書いています)
 
 - DDD: エリック・エヴァンスのドメイン駆動設計
-- Hexagonal Architecture: [Hexagonal architecture](https://alistair.cockburn.us/hexagonal-architecture/)
+- Hexagonal Architecture: [Hexagonal architecture – Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 - Clean Architecture: [The Clean Architecture - The Clean Code Blog](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ---
@@ -549,3 +549,9 @@ A. 規模に対してClean Architectureではオーバースペックな可能�
 - やっていた仕事を周りに任せられる
 
 など、良いことが無限にあります。
+
+---
+# 参考文献
+- Eric Evans (著), 和智右桂  (翻訳), 牧野祐子 (翻訳), 今関剛 (監修)「エリック・エヴァンスのドメイン駆動設計」, 翔泳社, 2011/4/9
+- Alistair Cockburn「Hexagonal architecture」, https://alistair.cockburn.us/hexagonal-architecture/ (2022/1/22)
+- Clean Coder Blog「The Clean Architecture」, https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html (2022/1/22)
