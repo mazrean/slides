@@ -35,7 +35,7 @@ _class:
 _paginate: false
 -->
 
-# DDDから学ぶ設計講習会
+# DDDで学ぶ設計講習会
 ## @mazrean
 
 ---
