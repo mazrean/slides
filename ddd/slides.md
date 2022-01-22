@@ -126,8 +126,9 @@ Domain層とInfrastructure層の依存関係を逆にすれば解決する
 ---
 # 注意点
 
-interfaceの定義時には依存される側(今回ならInfrastructure)の
+interfaceの定義時には依存される側(今回ならDomain)の
 データしか使ってはいけない
+DBのテーブル構造関係のデータとかはNG
 
 ![w:600](inversion-of-control.drawio.svg)
 
