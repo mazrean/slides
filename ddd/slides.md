@@ -160,7 +160,7 @@ _class:
 ![bg right:50% w:500](wire-gen.png)
 
 ---
-# Layered Architecture with DI
+# Layered Architecture(DIあり)
 
 DIでLayered ArchitectureのDomain層とInfrastructure層の依存を逆転させる
 
