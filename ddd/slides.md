@@ -142,7 +142,7 @@ _class:
 ![bg right:50% 75%](wire-gen.png)
 
 ---
-# Layered Architecture with DIP
+# Layered Architecture with DI
 
 DIでLayered ArchitectureのDomain層とInfrastructure層の依存を逆転させる
 
@@ -231,7 +231,7 @@ Port, Adapterという見方が特徴
 - **InfrastructureがApplicationに依存**
 - Domainへの言及がない
 
-![w:500](ddd-to-hexagonal.drawio.svg)
+![h:250](ddd-to-hexagonal.drawio.svg)
 
 ---
 # メリット
@@ -342,3 +342,14 @@ _paginate: false
 欲しいinterfaceに合わせるデザインパターン
 
 ![](adapter-pattern.drawio.svg)
+
+---
+# 最後に
+
+ここまで長いものでなくて良いので、講習会をやってみてください！
+
+- 知識が整理できる
+- 興味がある分野に周りが興味を持ってくれて、刺激を受けられる可能性が上がる
+- やっていた仕事を周りに任せられる
+
+など、良いことが無限にあります。
