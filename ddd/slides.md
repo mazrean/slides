@@ -86,7 +86,7 @@ _paginate: false
 - Application層:
   アプリケーションならではの処理(ビジネスロジック)
 - Domain層:
-  アプリケーションで満たすべき仕様・ルール(ドメイン)
+  アプリケーションで満たすべき仕様(ドメイン)
 - Infrastructure層:
   技術的な機能の実装（ex:DBへのSQL実行）
 
