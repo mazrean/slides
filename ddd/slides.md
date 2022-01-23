@@ -221,7 +221,7 @@ tokiという文字列のユーザー名はそれ自体で識別することは�
 
 ---
 # 演習: Domainを見てみよう
-時間: 2min
+時間: 7min
 traP CollectionのサーバーサイドはDDDベースのアーキテクチャになっている。ドメインを見てみよう!
 https://github.com/traPtitech/trap-collection-server
 
@@ -293,7 +293,7 @@ PC(アプリケーション)に接続するイメージ
 
 ---
 # 演習: Port, Adapterを見てみよう
-時間: 2min
+時間: 7min
 traP CollectionのサーバーサイドにもPort, Adapterの構造が存在する
 repository(データ永続化)のPort, Adapterを見てみよう!
 https://github.com/traPtitech/trap-collection-server
