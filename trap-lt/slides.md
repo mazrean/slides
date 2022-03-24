@@ -144,7 +144,7 @@ CLIとライブラリで構成される。
 2. Join後のテーブル計算
 3. コード生成 - ASTを構築、コードへ
 
-![w:1100](./codegen-flow.png)
+![w:1100](./codegen-flow.svg)
 
 ---
 ## ASTでコード生成する
@@ -200,7 +200,7 @@ func typedTableExpr(tableType ast.Expr, exprType ast.Expr) ast.Expr {
 1. テーブル構築 - 生成コードベース
 2. クエリ構築 - ライブラリベース
 
-![w:1100](./use-flow.png)
+![w:1100](./use-flow.svg)
 
 ---
 ## テーブル構築とクエリ構築の繋ぎこみ
