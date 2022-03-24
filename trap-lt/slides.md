@@ -376,9 +376,9 @@ _class:
 - invert
 _paginate: false
 -->
-## GenORMの目指す未来
+## 目標
 
-# build静的解析通ったらSQLの実行時エラーほぼない
+## SQLの実行時エラー0
 
 ---
 <!--
