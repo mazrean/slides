@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia
-title: GenORM 実装tips
+title: GenORM実装解説
 author: mazrean
 url: https://slides-mazrean.vercel.app/trap-lt/
 image: https://slides-mazrean.vercel.app/trap-lt/ogp.png
@@ -34,7 +34,7 @@ _class:
 - invert
 _paginate: false
 -->
-# GenORM 実装tips
+# GenORM実装解説
 ## @mazrean
 ### #traP_LT
 
