@@ -428,8 +428,8 @@ GenORMの場合、分けると使い勝手が悪くなるので分けたくな�
 <h2>対応SQL増加</h2>
 <p>性質上、対応可能なSQLが非常の多い</p>
 <p>カラム名以外でのSELECT,etcもできるようにしたい</p>
-<pre><code class="language-go"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>tuplValues, err = genorm.
-	Find(orm.User(), genorm.Tupl(user.NameExpr, genorm.Count(user.IDExpr, <span class="hljs-literal">false</span>))).
+<pre><code class="language-go"><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>tupleValues, err = genorm.
+	Find(orm.User(), genorm.Tuple2(user.NameExpr, genorm.Count(user.IDExpr, <span class="hljs-literal">false</span>))).
 	GroupBy(user.Name).
 	GetAll(db)
 </span></span></foreignObject></svg></code></pre>
