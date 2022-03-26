@@ -6,6 +6,7 @@ author: mazrean
 url: https://slides-mazrean.vercel.app/trap-lt/
 image: https://slides-mazrean.vercel.app/trap-lt/ogp.png
 paginate: true
+footer: traPLT 2022 [#traP_LT](https://twitter.com/search?q=%23traP_LT)
 ---
 <style>
 	:root {
