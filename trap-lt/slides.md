@@ -303,6 +303,7 @@ func (c *SelectContext[S, T]) GetCtx(ctx context.Context, db DB) (T, error) {
 ## 型推論
 
 Go 1.18時点のGenericsの型推論は2種類
+参考: https://zenn.dev/nobishii/articles/type_param_intro_2
 
 - 関数引数型推論(Function argument type inference)
 	- `func hoge[T any](t T)`で`func hoge(1)`
