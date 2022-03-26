@@ -458,7 +458,7 @@ func (n *NullValue[T]) Scan(value any) error {
 ---
 ## `database/sql`の`Null~`
 
-おそらくジェネリクス使ってok(公式が実際にするかは不明)
+おそらくジェネリクス使ってok(実際にされるかは不明)
 現在でも`any`に変換しているので、速度低下は起きなさそう
 
 ```go
