@@ -326,7 +326,153 @@ func Select[S any, T TablePointer[S]](table T) *SelectContext[S, T]{
   // 省略
 }
 ```
-![bg right:30% w:90%](./type-inference.png)
+![bg right:40% w:100%](./type-inference.png)
+
+---
+## ジェネリクスとgomock
+
+現在、gomockで型パラメーターを含むmockは生成できない
+interfaceが型パラメーターを持たなくても、
+生成できない場合がある
+
+参考: https://github.com/golang/mock/issues/621
+
+---
+## gomockがファイルをparseする流れ
+
+1. import先packageのinterfaceとidentifierのmap作成
+  - **interfaceの中身までは見ない**
+2. ファイル内のinterfaceを全てparse
+  - ここでは全interfaceの中身を見る
+  - interfaceをembedしている場合、1のmapからとりだして中身を見る
+
+---
+## gomockが動かない条件
+
+以下のいずれかで落ちる
+
+- ファイルのinterfaceに型パラメーターがある
+- embedされているinterfaceに型パラメーターがある
+
+---
+## GenORMの事例
+
+Expr自体は型パラメーターがないが、
+TableExprに方パラメーターがあるのでmockできない
+
+```go
+type Expr interface {
+	Expr() (string, []ExprType, []error)
+}
+
+type TableExpr[T Table] interface {
+	Expr
+	TableExpr(T) (string, []ExprType, []error)
+}
+```
+
+---
+## 回避方法
+
+- 型パラメーターがないinterfaceだけ分ける
+  →可読性の観点であまりやりたくない
+- 別ファイルでembed
+  GenORMでは`genorm_test`パッケージに置いている
+  ```go
+  type Expr interface {
+    genorm.Expr
+  }
+  ```
+
+---
+## WrappedPrimitiveのScan
+
+Scanのみ型ごとに処理が分かれる
+```go
+type ExprPrimitive interface {
+	bool |
+		int | int8 | int16 | int32 | int64 |
+		uint | uint8 | uint16 | uint32 | uint64 |
+		float32 | float64 |
+		string | time.Time
+}
+
+type WrappedPrimitive[T ExprPrimitive] struct {
+	valid bool
+	val   T
+}
+```
+
+---
+## 型パラメーターでのswitch
+
+できるならそもそも型を分けて対応するべき
+GenORMの場合、分けると使い勝手が悪くなるので分けたくない
+
+書きたいやつ(できない)
+```go
+func (wp *WrappedPrimitive[T]) Scan(src any) error {
+	switch T {
+	case bool:
+    //省略
+	}
+  // 省略
+}
+```
+
+---
+## 型パラメーターでのswitch
+
+繰り返しですが、やらないで良いならやらない方が良い
+
+力技対応
+```go
+func (wp *WrappedPrimitive[T]) Scan(src any) error {
+  var dest any = wp.val
+	switch dest.(type) {
+	case bool:
+    //省略
+	}
+  // 省略
+}
+```
+
+---
+## `database/sql`の`Null~`
+
+ジェネリクスの使い道として真っ先に考えたんじゃないかと思う
+本当にジェネリクスの使いいどころなのか？と言う疑問が出てくる
+
+こうなる？
+```go
+func (n *NullValue[T]) Scan(value any) error {
+	var dest any = wp.val
+	switch dest.(type) {
+	case bool:
+    //省略
+	}
+  // 省略
+}
+```
+
+---
+## `database/sql`の`Null~`
+
+おそらくジェネリクス使ってok(公式が実際にするかは不明)
+現在でも`any`に変換しているので、速度低下は起きなさそう
+
+```go
+func (n *NullInt16) Scan(value any) error {
+	// 省略
+	err := convertAssign(&n.Int16, value)
+	n.Valid = err == nil
+	return err
+}
+
+func convertAssign(dest, src any) error {
+  // 省略
+}
+```
 
 ---
 <!--
