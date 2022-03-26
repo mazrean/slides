@@ -8,25 +8,25 @@ image: https://slides-mazrean.vercel.app/trap-lt/ogp.png
 paginate: true
 ---
 <style>
-  :root {
-    --color-background: #f2f4f7;
-    --color-foreground: #111f4d;
-    --color-highlight: rgba(17, 31, 77, 0.5);
-    --color-dimmed: #757575;
-  }
-  :root.invert {
-    --color-background: #111f4d;
-    --color-foreground: #f2f4f7;
-    --color-highlight: rgba(17, 31, 77, 0.5);
-    --color-dimmed: #757575;
-  }
-  .gist {
-    height: 400px !important;
-  }
-  .gist-file .gist-data {
-    max-height:400px;
-    overflow-y: visible;
-  }
+	:root {
+		--color-background: #f2f4f7;
+		--color-foreground: #111f4d;
+		--color-highlight: rgba(17, 31, 77, 0.5);
+		--color-dimmed: #757575;
+	}
+	:root.invert {
+		--color-background: #111f4d;
+		--color-foreground: #f2f4f7;
+		--color-highlight: rgba(17, 31, 77, 0.5);
+		--color-dimmed: #757575;
+	}
+	.gist {
+		height: 400px !important;
+	}
+	.gist-file .gist-data {
+		max-height:400px;
+		overflow-y: visible;
+	}
 </style>
 <!--
 _class:
@@ -183,7 +183,7 @@ newCodeBytes, err := imports.Process("", codeBytes, nil)
 func typedTableExpr(tableType ast.Expr, exprType ast.Expr) ast.Expr {
 	return &ast.IndexListExpr{
 		X: &ast.SelectorExpr{
-			X:   genormIdent,
+			X:	 genormIdent,
 			Sel: ast.NewIdent("TypedTableExpr"),
 		},
 		Indices: []ast.Expr{
@@ -208,10 +208,10 @@ func typedTableExpr(tableType ast.Expr, exprType ast.Expr) ast.Expr {
 プロトタイプ
 ```go
 messageUserValues, err := orm.User().
-  Message().Join(genorm.Eq(userIDExpr, messageUserID))
-  Select().
-  Fields(userName, messageContent).
-  GetAll(db)
+	Message().Join(genorm.Eq(userIDExpr, messageUserID))
+	Select().
+	Fields(userName, messageContent).
+	GetAll(db)
 ```
 
 ---
@@ -220,11 +220,11 @@ messageUserValues, err := orm.User().
 現在
 ```go
 table := orm.User().
-  Message().Join(genorm.Eq(userIDExpr, messageUserID))
+	Message().Join(genorm.Eq(userIDExpr, messageUserID))
 messageUserValues, err := genorm.
-  Select(table).
-  Fields(userName, messageContent).
-  GetAll(db)
+	Select(table).
+	Fields(userName, messageContent).
+	GetAll(db)
 ```
 
 ---
@@ -251,8 +251,8 @@ Expression指定でSELECTする
 // SELECT id FROM users
 // userIDs: []uuid.UUID
 userIDs, err := genorm.
-  Pluck(orm.User(), user.IDExpr).
-  GetAll(db)
+	Pluck(orm.User(), user.IDExpr).
+	GetAll(db)
 ```
 
 ---
@@ -284,9 +284,9 @@ type SelectContext[S any, T TablePointer[S]] struct {
 	//省略
 }
 func (c *SelectContext[S, T]) GetCtx(ctx context.Context, db DB) (T, error) {
-  //省略
+	//省略
 	var table S
-  //省略
+	//省略
 	return &table, nil
 }
 ```
@@ -305,8 +305,8 @@ func (c *SelectContext[S, T]) GetCtx(ctx context.Context, db DB) (T, error) {
 Go 1.18時点のGenericsの型推論は2種類
 
 - 関数引数型推論(Function argument type inference)
-  - `func hoge[T any](t T)`で`func hoge(1)`
-    →`T`は`int`
+	- `func hoge[T any](t T)`で`func hoge(1)`
+		→`T`は`int`
 - 制約型推論(Constraint type inference)
 
 ---
@@ -323,7 +323,7 @@ type TablePointer[T any] interface {
 }
 
 func Select[S any, T TablePointer[S]](table T) *SelectContext[S, T]{
-  // 省略
+	// 省略
 }
 ```
 ![bg right:40% w:100%](./type-inference.png)
@@ -341,10 +341,10 @@ interfaceが型パラメーターを持たなくても、
 ## gomockがファイルをparseする流れ
 
 1. import先packageのinterfaceとidentifierのmap作成
-  - **interfaceの中身までは見ない**
+	- **interfaceの中身までは見ない**
 2. ファイル内のinterfaceを全てparse
-  - ここでは全interfaceの中身を見る
-  - interfaceをembedしている場合、1のmapからとりだして中身を見る
+	- ここでは全interfaceの中身を見る
+	- interfaceをembedしている場合、1のmapからとりだして中身を見る
 
 ---
 ## gomockが動かない条件
@@ -375,14 +375,14 @@ type TableExpr[T Table] interface {
 ## 回避方法
 
 - 型パラメーターがないinterfaceだけ分ける
-  →可読性の観点であまりやりたくない
+	→可読性の観点であまりやりたくない
 - 別ファイルでembed
-  GenORMでは`genorm_test`パッケージに置いている
-  ```go
-  type Expr interface {
-    genorm.Expr
-  }
-  ```
+	GenORMでは`genorm_test`パッケージに置いている
+	```go
+	type Expr interface {
+		genorm.Expr
+	}
+	```
 
 ---
 ## WrappedPrimitiveのScan
@@ -399,7 +399,7 @@ type ExprPrimitive interface {
 
 type WrappedPrimitive[T ExprPrimitive] struct {
 	valid bool
-	val   T
+	val	 T
 }
 ```
 
@@ -414,9 +414,9 @@ GenORMの場合、分けると使い勝手が悪くなるので分けたくな�
 func (wp *WrappedPrimitive[T]) Scan(src any) error {
 	switch T {
 	case bool:
-    //省略
+		//省略
 	}
-  // 省略
+	// 省略
 }
 ```
 
@@ -428,12 +428,12 @@ func (wp *WrappedPrimitive[T]) Scan(src any) error {
 力技対応
 ```go
 func (wp *WrappedPrimitive[T]) Scan(src any) error {
-  var dest any = wp.val
+	var dest any = wp.val
 	switch dest.(type) {
 	case bool:
-    //省略
+		//省略
 	}
-  // 省略
+	// 省略
 }
 ```
 
@@ -449,9 +449,9 @@ func (n *NullValue[T]) Scan(value any) error {
 	var dest any = wp.val
 	switch dest.(type) {
 	case bool:
-    //省略
+		//省略
 	}
-  // 省略
+	// 省略
 }
 ```
 
@@ -470,7 +470,7 @@ func (n *NullInt16) Scan(value any) error {
 }
 
 func convertAssign(dest, src any) error {
-  // 省略
+	// 省略
 }
 ```
 
@@ -495,11 +495,11 @@ Goの構文中に全SQLが現れる
 
 ```go
 userValues, err = genorm.
-  Select(orm.User()).
-  Fields(user.Name).
-  GroupBy(user.Name).
-  Having(genorm.GtLit(genorm.Count(user.IDExpr, false), genorm.Wrap(int64(10)))).
-  GetAll(db)
+	Select(orm.User()).
+	Fields(user.Name).
+	GroupBy(user.Name).
+	Having(genorm.GtLit(genorm.Count(user.IDExpr, false), genorm.Wrap(int64(10)))).
+	GetAll(db)
 ```
 
 ---
@@ -510,9 +510,9 @@ userValues, err = genorm.
 カラム名以外でのSELECT,etcもできるようにしたい
 ```go
 tuplValues, err = genorm.
-  Find(orm.User(), genorm.Tupl(user.NameExpr, genorm.Count(user.IDExpr, false))).
-  GroupBy(user.Name).
-  GetAll(db)
+	Find(orm.User(), genorm.Tupl(user.NameExpr, genorm.Count(user.IDExpr, false))).
+	GroupBy(user.Name).
+	GetAll(db)
 ```
 
 ---
