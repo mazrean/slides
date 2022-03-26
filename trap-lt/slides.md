@@ -336,8 +336,6 @@ func Select[S any, T TablePointer[S]](table T) *SelectContext[S, T]{
 - [The Go Programming Language Specification](https://go.dev/ref/spec#Type_inference)
 - [Type Parameters Proposal](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#constraint-type-inference)(最終的な仕様とは微妙に違うのに注意)
 
-日本語だとNobishiiさんの[Go言語のジェネリクス入門(2) インスタンス化と型推論](https://zenn.dev/nobishii/articles/type_param_intro_2#%E5%88%B6%E7%B4%84%E5%9E%8B%E6%8E%A8%E8%AB%96)がわかりやすい
-
 ---
 ## ジェネリクスとgomock
 
