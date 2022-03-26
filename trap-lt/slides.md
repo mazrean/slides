@@ -306,15 +306,17 @@ Go 1.18時点のGenericsの型推論は2種類
 
 - 関数引数型推論(Function argument type inference)
 	- `func hoge[T any](t T)`で`func hoge(1)`
-		→`T`は`int`
+		→`T → int`
 - 制約型推論(Constraint type inference)
 
 ---
 ## 制約型推論
 
-関数引数型推論の結果を使用してさらに型推論する
-- `T`は`*orm.UserTable`
-- `S`は`orm.UserTable`
+型制約を利用した型推論
+- `T → *orm.UserTable`(関数引数型推論)
+- `T → *S`(型制約)
+
+→`S → orm.UserTable`
 
 ```go
 type TablePointer[T any] interface {
@@ -326,7 +328,15 @@ func Select[S any, T TablePointer[S]](table T) *SelectContext[S, T]{
 	// 省略
 }
 ```
-![bg right:40% w:100%](./type-inference.png)
+![bg right:40% w:90%](./type-inference.png)
+
+---
+## 制約型推論
+詳しくは
+- [The Go Programming Language Specification](https://go.dev/ref/spec#Type_inference)
+- [Type Parameters Proposal](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#constraint-type-inference)(最終的な仕様とは微妙に違うのに注意)
+
+日本語だとNobishiiさんの[Go言語のジェネリクス入門(2) インスタンス化と型推論](https://zenn.dev/nobishii/articles/type_param_intro_2#%E5%88%B6%E7%B4%84%E5%9E%8B%E6%8E%A8%E8%AB%96)がわかりやすい
 
 ---
 ## ジェネリクスとgomock
@@ -373,6 +383,8 @@ type TableExpr[T Table] interface {
 
 ---
 ## 回避方法
+
+内部実装が変わると使えなくなる可能性があるのに注意
 
 - 型パラメーターがないinterfaceだけ分ける
 	→可読性の観点であまりやりたくない
@@ -423,12 +435,12 @@ func (wp *WrappedPrimitive[T]) Scan(src any) error {
 ---
 ## 型パラメーターでのswitch
 
-繰り返しですが、やらないで良いならやらない方が良い
+やらないで良いならやらない方が良い
 
 力技対応
 ```go
 func (wp *WrappedPrimitive[T]) Scan(src any) error {
-	var dest any = wp.val
+	var dest any = wp.val // wp.valの型はT
 	switch dest.(type) {
 	case bool:
 		//省略
@@ -438,10 +450,10 @@ func (wp *WrappedPrimitive[T]) Scan(src any) error {
 ```
 
 ---
-## `database/sql`の`Null~`
+## `database/sql`の`NullInt16`,etc
 
 ジェネリクスの使い道として真っ先に考えたんじゃないかと思う
-本当にジェネリクスの使いいどころなのか？と言う疑問が出てくる
+本当にジェネリクスの使いどころなのか？と言う疑問が出てくる
 
 こうなる？
 ```go
@@ -458,8 +470,7 @@ func (n *NullValue[T]) Scan(value any) error {
 ---
 ## `database/sql`の`Null~`
 
-おそらくジェネリクス使ってok(実際にされるかは不明)
-現在でも`any`に変換しているので、速度低下は起きなさそう
+現在でも`any`に変換して内部でswitchしていた
 
 ```go
 func (n *NullInt16) Scan(value any) error {
