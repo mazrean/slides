@@ -509,8 +509,8 @@ userValues, err = genorm.
 
 カラム名以外でのSELECT,etcもできるようにしたい
 ```go
-tuplValues, err = genorm.
-	Find(orm.User(), genorm.Tupl(user.NameExpr, genorm.Count(user.IDExpr, false))).
+tupleValues, err = genorm.
+	Find(orm.User(), genorm.Tuple2(user.NameExpr, genorm.Count(user.IDExpr, false))).
 	GroupBy(user.Name).
 	GetAll(db)
 ```
