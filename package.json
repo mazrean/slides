@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/mazrean/slides#readme",
   "devDependencies": {
-    "@marp-team/marp-cli": "^1.4.1"
+    "@marp-team/marp-cli": "^2.0.0"
   },
   "dependencies": {
     "pug": "^3.0.2"
