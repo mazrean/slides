@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "./build.sh",
-    "generate": "node generate.js"
+    "generate": "npx @php-wasm/cli index.php > dist/index.html"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/mazrean/slides#readme",
   "devDependencies": {
-    "@marp-team/marp-cli": "^4.0.0"
-  },
-  "dependencies": {
-    "pug": "^3.0.2"
+    "@marp-team/marp-cli": "^4.0.0",
+    "@php-wasm/cli": "^1.0.28"
   }
 }
