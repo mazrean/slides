@@ -23,13 +23,22 @@ jobs:
       - run: npm install
       - name: Build
         run: npm run build
+      - name: Count changes
+        id: changes
+        run: |
+          git add -N .
+          echo "count=$(git diff --name-only | wc -l)" >> $GITHUB_OUTPUT
       - name: Setup Git
+        if: steps.changes.outputs.count != 0
         run: |
           git config --local user.name "${GITHUB_ACTOR}"
           git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
       - name: Git Add
+        if: steps.changes.outputs.count != 0
         run: git add .
       - name: Git Commit
+        if: steps.changes.outputs.count != 0
         run: git commit -m "slide update"
       - name: Git Push
+        if: steps.changes.outputs.count != 0
         run: git push origin ${GITHUB_REF}
