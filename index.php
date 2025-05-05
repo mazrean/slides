@@ -16,8 +16,11 @@ function sanitize_output($buffer) {
 }
 ob_start("sanitize_output");
 
-$slideDirectories = array_filter(scandir('./dist/'), function($dir) {
-    return is_dir($dir) && $dir !== '.' && $dir !== '..' && !preg_match('/^\..*/', $dir);
+define('TARGET_DIR', './dist/');
+
+$slideDirectories = scandir(TARGET_DIR);
+$slideDirectories = array_filter($slideDirectories, function($dir) {
+    return is_dir(TARGET_DIR . $dir) && $dir !== '.' && $dir !== '..' && !preg_match('/^\..*/', $dir);
 });
 $slideDirectories = array_map(function($dir) {
     return htmlspecialchars($dir, ENT_QUOTES, 'UTF-8');
