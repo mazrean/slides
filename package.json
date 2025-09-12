@@ -18,6 +18,6 @@
   "homepage": "https://github.com/mazrean/slides#readme",
   "devDependencies": {
     "@marp-team/marp-cli": "^4.0.0",
-    "@php-wasm/cli": "^1.0.28"
+    "@php-wasm/cli": "^2.0.19"
   }
 }
